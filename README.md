@@ -14,14 +14,14 @@ Database filename:
 > filename : sample.sql
 
 #### How many hours spent 
-> Install Simple Strapi CMS and MariaDB : 20 mins
-> Creating new content type `Activity`: 10 mins
-> Creating new endpoint /activities_price : 30 mins
-> Sending email : 30 mins
+> * Install Simple Strapi CMS and MariaDB : 20 mins
+> * Creating new content type `Activity`: 10 mins
+> * Creating new endpoint /activities_price : 30 mins
+> * Sending email : 30 mins
 
 
 #### How to install
-> * git clone https://github.com/jinlongocde/strapi_pbbm.git 
+>  * git clone https://github.com/jinlongocde/strapi_pbbm.git 
 >  * npm install 
 >  * cd admin & npm install
 >  * Install MariaDB and import sql file ( dbname :strapi_db, username:root, password: No)
@@ -31,10 +31,10 @@ Database filename:
 
 #### How to create Activity Content Type
 Already created activity content type if you import sql , but here i mention how to create content type.
-> Goto Content Type Builder and add new content type
-> Add fields and set fields type
-> After complete, you can see the Activities in top left side menu.
-> You can add new activities throught Activity Content Type.
+> * Goto Content Type Builder and add new content type
+> * Add fields and set fields type
+> * After complete, you can see the Activities in top left side menu.
+> * You can add new activities throught Activity Content Type.
 
 #### Activity Table schema
 id | Title_en | Sub_title_en | Description_en | Title_de | Sub_title_de | Description_de | Title_es | Sub_title_es | Description_es |Price
@@ -42,14 +42,14 @@ id | Title_en | Sub_title_en | Description_en | Title_de | Sub_title_de | Descri
 INT | varchar ( 100) | varchar (100) | Text | varchar(100) | varchar(100) | Text | varchar(100) | varchar (100) | Text| Decimal(10, 2)
 
 #### Pre Actions
-> In Strapi admin panel, goto Roles & Permissions > Public > Activities
-> Check Permission.  If not selected, Select all checkboxes  (activities_price,count,create,destroy,find,findone,testemail,update)
+> * In Strapi admin panel, goto Roles & Permissions > Public > Activities
+> * Check Permission.  If not selected, Select all checkboxes  (activities_price,count,create,destroy,find,findone,testemail,update)
 
 #### How to Create Custom EndPoint  /activities_price
 In order to implement custom endpoint, you need to define custom route and callback function of it inside activity content type.
-> Open the source code using VSCode or other IDE Tool.
-> You can see api/activities folder. This folder created after created `activity` content type.
-> check config/routes.json and add following code at the bottom of json file.
+> * Open the source code using VSCode or other IDE Tool.
+> * You can see api/activities folder. This folder created after created `activity` content type.
+> * check config/routes.json and add following code at the bottom of json file.
 ````` json
 {
       "method": "PUT",
@@ -86,19 +86,19 @@ Using query builder, loop all activities and update prices. And then return upda
 #### How to Customize Content Manager plugin
 In order to catch the endpoint whenever add new activity, it requires to customize Strapi content-manager-plugin.
 In admin panel, when user create/update/delete content type elements, it execute the content-manager plugin
-> Goto root folder/plugins/content-manager and check controllers and services
-> In services/ContentManager.js file, there are add and edit functions 
+> * Goto root folder/plugins/content-manager and check controllers and services
+> * In services/ContentManager.js file, there are add and edit functions 
 Add() is executed when create new activity, Edit() is executed when update activity 
 You can add send email function in these functions.
 
 #### How to Send email 
-> By default, in Strapi, there are sendemail plugin. But you need to set email account providers by install nodemailer
-> Install nodemailer email provider 
-> npm i strapi-provider-email-nodemailer
-> After install, goto Strapi admin panel
-> Goto Plugins/Email Setting  and select provider into nodemailer
-> Set mailer configurations (Host, port, username, password, etc). As test mode, you can use mailtrap.io (Free Mail Hosting service)
-> After complete setup, you can add  send email function inside add() / edit() function in services/ContentManager.js file
+> * By default, in Strapi, there are sendemail plugin. But you need to set email account providers by install nodemailer
+> * Install nodemailer email provider 
+> * npm i strapi-provider-email-nodemailer
+> * After install, goto Strapi admin panel
+> * Goto Plugins/Email Setting  and select provider into nodemailer
+> * Set mailer configurations (Host, port, username, password, etc). As test mode, you can use mailtrap.io (Free Mail Hosting service)
+> * After complete setup, you can add  send email function inside add() / edit() function in services/ContentManager.js file
 At the start of add() function , add following code
 ````` javascript
     await strapi.plugins['email'].services.email.send({
