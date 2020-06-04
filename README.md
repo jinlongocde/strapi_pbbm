@@ -22,11 +22,11 @@ Database filename:
 
 #### How to install
 > * git clone https://github.com/jinlongocde/strapi_pbbm.git 
-  * npm install 
-  * cd admin & npm install
-  * Install MariaDB and import sql file ( dbname :strapi_db, username:root, password: No)
-  * strapi start
-  * visit http://localhost:1337/admin  (username: Cai Renhu, password: 123123)
+>  * npm install 
+>  * cd admin & npm install
+>  * Install MariaDB and import sql file ( dbname :strapi_db, username:root, password: No)
+>  * strapi start
+>  * visit http://localhost:1337/admin  (username: Cai Renhu, password: 123123)
 
 
 #### How to create Activity Content Type
