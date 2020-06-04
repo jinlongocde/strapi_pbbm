@@ -1,2 +1,3 @@
-# strapi_pbbm
-Strapi Simple PBBM
+# PBBM
+
+A quick description of PBBM.

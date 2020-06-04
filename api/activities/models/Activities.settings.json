@@ -1,0 +1,50 @@
+{
+  "connection": "default",
+  "collectionName": "Activities",
+  "info": {
+    "name": "activities",
+    "description": "Activities \n- with EN, DE, ES languages.. "
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Title_en": {
+      "type": "string"
+    },
+    "Title_de": {
+      "type": "string"
+    },
+    "Title_es": {
+      "type": "string"
+    },
+    "Sub_title_en": {
+      "type": "string"
+    },
+    "Sub_title_de": {
+      "type": "string"
+    },
+    "Sub_title_es": {
+      "type": "string"
+    },
+    "Description_en": {
+      "type": "text"
+    },
+    "Description_de": {
+      "type": "text"
+    },
+    "Description_es": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Pictures": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}
