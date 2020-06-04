@@ -113,6 +113,6 @@ You will receive email when create new activity.
 
 
 #### Thank you. 
-####### JLCode (Cai Renhu) [Website](http://jinlongcode.com) / [Linkedin](https://www.linkedin.com/in/cai-renhu-70bb44189/)
+####### JLCode (Cai Renhu) [Website](http://jinlongcode.com) / [Linkedin](https://www.linkedin.com/in/cai-renhu-70bb44189/) / skype: live:borys.franko11
 
 
